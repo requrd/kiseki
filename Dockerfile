@@ -5,7 +5,7 @@ ENV TZ="Asia/Tokyo" \
     CHANNELS_CONFIG_PATH="/app-config/channels.yml" \
     SERVICES_DB_PATH="/app-data/services.json" \
     PROGRAMS_DB_PATH="/app-data/programs.json" \
-    DOCKER: "YES"
+    DOCKER="YES"
 
 COPY b25 /usr/local/bin/b25
 COPY libarib25.so.0 /usr/lib/x86_64-linux-gnu/libarib25.so.0
