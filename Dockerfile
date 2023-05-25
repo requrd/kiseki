@@ -13,5 +13,6 @@ COPY libpcsclite.so.1.0.0 /usr/lib/x86_64-linux-gnu/libpcsclite.so.1.0.0
 COPY arib-b25-stream-test /usr/local/bin/arib-b25-stream-test
 RUN mkdir app-config
 COPY ./conf /app-config
+COPY ./877b48382139fc03282eb448827c6d4b/channels.yml /app-config
 EXPOSE 40772 9229
 CMD ["npm", "start"]
