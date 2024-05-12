@@ -1,4 +1,4 @@
-FROM chinachu/mirakurun:amd64-3.8.0
+FROM chinachu/mirakurun:amd64-3.9.0-rc.4
 ENV TZ="Asia/Tokyo" \
     SERVER_CONFIG_PATH="/app-config/server.yml" \
     TUNERS_CONFIG_PATH="/app-config/tuners.yml" \
