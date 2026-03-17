@@ -7,6 +7,7 @@ ENV TZ="Asia/Tokyo" \
     PROGRAMS_DB_PATH="/app-data/programs.json" \
     DOCKER="YES"
 
+RUN apt-get update && apt-get install -y tini
 COPY b25 /usr/local/bin/b25
 COPY libarib25.so.0 /usr/lib/x86_64-linux-gnu/libarib25.so.0
 COPY libpcsclite.so.1.0.0 /usr/lib/x86_64-linux-gnu/libpcsclite.so.1.0.0
@@ -19,4 +20,5 @@ RUN cat /app-config/channels.yml >> /app-config/tokyo-channels.yml &&\
 ADD https://raw.githubusercontent.com/Chinachu/dvbconf-for-isdb/master/conf/dvbv5_channels_isdbs.conf /app/config/dvbconf-for-isdb/conf/dvbv5_channels_isdbs.conf
 RUN chmod +r /app/config/dvbconf-for-isdb/conf/dvbv5_channels_isdbs.conf
 EXPOSE 40772 9229
+ENTRYPOINT [ "tini", "--" ]
 CMD ["npm", "start"]
